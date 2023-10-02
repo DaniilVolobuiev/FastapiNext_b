@@ -5,6 +5,9 @@ class ToDoRequest(BaseModel):
     completed: bool
     priority: int
 
+class ToDoUpdateRequest(BaseModel):
+    completed: bool
+
 class ToDoResponse(BaseModel):
     title: str
     completed: bool

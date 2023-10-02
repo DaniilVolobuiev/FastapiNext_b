@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    app_name: str = "Awesome API"
+    app_name: str = "Debil Api"
     DATABASE_USER: str
     DATABASE_PASSWORD: str
     DATABASE_HOST: str

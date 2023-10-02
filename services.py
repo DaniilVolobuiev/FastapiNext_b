@@ -28,11 +28,11 @@ def read_todos(db: Session, completed: bool, search_string: str = None, sort_ord
     return todos
 
 
-def update_todo(db: Session, id: int, todo: schemas.ToDoRequest):
+def update_todo(db: Session, id: int, todo: schemas.ToDoUpdateRequest):
     db_todo = db.query(models.ToDo).filter(models.ToDo.id == id).first()
     if db_todo is None:
         return None
-    db.query(models.ToDo).filter(models.ToDo.id == id).update({'title': todo.title, 'completed': todo.completed})
+    db.query(models.ToDo).filter(models.ToDo.id == id).update({'completed': todo.completed})
     db.commit()
     db.refresh(db_todo)
     return db_todo
